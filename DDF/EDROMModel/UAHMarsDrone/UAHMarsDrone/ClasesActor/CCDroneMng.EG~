@@ -1,0 +1,324 @@
+[Version Actor SW]
+5
+0
+0
+0
+0
+[Modificado]
+1
+1
+0
+[Estructura]
+[Version Estructura]
+3
+[Parametro]
+NULL
+ 
+ 
+[FinParametro]
+[Stack]
+1
+[FinStack]
+[Puertos]
+1
+[Version Puerto]
+0
+DroneMngCtrl
+0
+1
+1
+[Version Grafico Puerto]
+0
+48
+30
+CPDroneMngCtrl
+[FinPuertos]
+[ActoresComponente]
+0
+[FinActoresComponente]
+[Uniones]
+0
+[FinUniones]
+[NumTimers]
+0
+[FinNumTimers]
+[NumMsgDef]
+10
+[FinNumMsgDef]
+[FinEstructura]
+[Comportamiento]
+[Version Comportamiento]
+3
+0
+[Pools]
+0
+[Modulos]
+0
+[Eventos]
+0
+[Maquina de Estados]
+[Version Maquina de Estados]
+1
+Top
+NULL
+[Subestados]
+4
+[Version SubEstados]
+3
+I
+;
+;
+;
+;
+;
+0
+0
+[ObjetoGrafico]
+[Version Objeto Grafico]
+0
+73 73 55 55
+[FinObjetoGrafico]
+SelfTest
+;
+;
+;
+;
+;
+1
+0
+[ObjetoGrafico]
+[Version Objeto Grafico]
+0
+192 140 90 60
+[FinObjetoGrafico]
+Ready
+;
+;
+;
+;
+;
+1
+0
+[ObjetoGrafico]
+[Version Objeto Grafico]
+0
+165 248 152 60
+[FinObjetoGrafico]
+FlightPlan
+;
+;
+;
+;
+;
+1
+0
+[ObjetoGrafico]
+[Version Objeto Grafico]
+0
+185 474 397 60
+[FinObjetoGrafico]
+[PuntosEleccion]
+2
+[Version PuntosEleccion]
+2
+CtrlAlgorithm
+0
+[ObjetoGrafico]
+[Version Objeto Grafico]
+0
+450 263 35 35
+[FinObjetoGrafico]
+ExecTC
+0
+[ObjetoGrafico]
+[Version Objeto Grafico]
+0
+237 369 35 35
+[FinObjetoGrafico]
+CtrlAlgorithm
+0
+[Ramas]
+2
+[Version Ramas]
+5
+PlanDone
+true
+Ready
+DSubEst
+;
+
+ 
+
+;
+;
+;
+;
+[GraficoRama]
+[Version GraficoRama]
+0
+450 280 317 280 2
+[FinGraficoRama]
+ProgNextCtrl
+true
+FlightPlan
+DSubEst
+;
+
+ 
+
+;
+;
+;
+;
+[GraficoRama]
+[Version GraficoRama]
+0
+484 280 552 474 0
+[FinGraficoRama]
+ExecTC
+0
+[Ramas]
+2
+[Version Ramas]
+5
+InitFlightPlan
+true
+FlightPlan
+DSubEst
+;
+
+ 
+
+;
+;
+;
+;
+[GraficoRama]
+[Version GraficoRama]
+0
+254 403 254 474 2
+[FinGraficoRama]
+WaitFP
+true
+Ready
+DSubEst
+;
+
+ 
+
+;
+;
+;
+;
+[GraficoRama]
+[Version GraficoRama]
+0
+237 386 186 308 3
+[FinGraficoRama]
+[Transiciones]
+4
+[Version Transicion]
+5
+Init
+I
+OSubEstI
+SelfTest
+DSubEst
+;
+[Trigger]
+EDROOMsl
+EDROOMStart
+true
+ 
+ 
+ 
+;
+;
+;
+0
+;
+[GraficoTransicion]
+[Version GraficoTransicion]
+0
+124 111 192 163 0
+[FinGraficoTransicion]
+
+SelfTest
+OSubEst
+Ready
+DSubEst
+;
+[Trigger]
+ 
+ 
+true
+ 
+ 
+ 
+;
+;
+;
+0
+;
+[GraficoTransicion]
+[Version GraficoTransicion]
+0
+233 200 233 248 2
+[FinGraficoTransicion]
+ExecTC
+Ready
+OSubEst
+ExecTC
+DPEleccion
+;
+[Trigger]
+ 
+ 
+true
+ 
+ 
+ 
+;
+;
+;
+0
+;
+[GraficoTransicion]
+[Version GraficoTransicion]
+0
+255 308 254 369 2
+[FinGraficoTransicion]
+CtrlAlgorithm
+FlightPlan
+OSubEst
+CtrlAlgorithm
+DPEleccion
+;
+[Trigger]
+ 
+ 
+true
+ 
+ 
+ 
+;
+;
+;
+0
+;
+[GraficoTransicion]
+[Version GraficoTransicion]
+0
+466 474 467 297 1
+[FinGraficoTransicion]
+[VariablesConstantes]
+0
+[Metodos]
+0
+[Version Metodos]
+21
+[MaquinasSubEstados]
+0
+[FinMaquinasSubEstados]
+[Fin Maquina de Estados]
+[FinComportamiento]
