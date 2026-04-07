@@ -20,18 +20,29 @@ NULL
 1
 [FinStack]
 [Puertos]
-1
+2
 [Version Puerto]
 0
 DroneMngCtrl
 0
 1
+2
+[Version Grafico Puerto]
+0
+47
+4
+CPDroneMngCtrl
+[Version Puerto]
+0
+DroneTimer
+0
+1
 1
 [Version Grafico Puerto]
 0
-48
+36
 30
-CPDroneMngCtrl
+EDROOMTimingSAP
 [FinPuertos]
 [ActoresComponente]
 0
@@ -40,7 +51,7 @@ CPDroneMngCtrl
 0
 [FinUniones]
 [NumTimers]
-0
+2
 [FinNumTimers]
 [NumMsgDef]
 10
@@ -53,9 +64,22 @@ CPDroneMngCtrl
 [Pools]
 0
 [Modulos]
+1
+[Version Modulo]
+1
+pus_service_iface
+
+v1
+
+1
 0
 [Eventos]
-0
+1
+[Event]
+[Version]
+1
+EvTimerDroneTimer
+Timer
 [Maquina de Estados]
 [Version Maquina de Estados]
 1
@@ -293,10 +317,10 @@ FlightPlan
 OSubEst
 CtrlAlgorithm
 DPEleccion
-;
+FFlightCtrlAlgorithm();
 [Trigger]
- 
- 
+DroneTimer
+EDROOMSignalTimeout
 true
  
  
@@ -321,7 +345,7 @@ Pr_Time
 Variable
 0
 [Metodos]
-8
+9
 [Version Metodos]
 21
 BasicAction
@@ -396,7 +420,8 @@ FToReady()
 0
 1
 
-0
+1
+pus_service129_drone_ready();
 BasicAction
 FInitFlightPlan()
 0
@@ -426,6 +451,16 @@ VNextCtrl += Pr_Time(0,100000);
 time = VNextCtrl;
 pus_service129_init_flight_plan();
 DroneTimer.InformAt(time);
+BasicAction
+FFlightCtrlAlgorithm()
+0
+0
+0
+0
+1
+
+1
+pus_service129_flight_ctrl_algorithm();
 [MaquinasSubEstados]
 0
 [FinMaquinasSubEstados]
