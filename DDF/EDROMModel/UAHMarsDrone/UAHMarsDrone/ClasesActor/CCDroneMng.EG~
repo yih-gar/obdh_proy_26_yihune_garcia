@@ -312,6 +312,13 @@ true
 466 474 467 297 1
 [FinGraficoTransicion]
 [VariablesConstantes]
+1
+[Version VariYConst]
+0
+VNextCtrl;
+Pr_Time
+
+Variable
 0
 [Metodos]
 8
@@ -398,7 +405,13 @@ FInitFlightPlan()
 0
 1
 
-0
+6
+Pr_Time time;
+time.GetTime();
+time += Pr_Time(0,100000);
+VNextCtrl=time;
+pus_service129_init_flight_plan();
+DroneTimer.InformAt(time);
 BasicAction
 FProgNextCtrl()
 0
@@ -407,7 +420,12 @@ FProgNextCtrl()
 0
 1
 
-0
+5
+Pr_Time time;
+VNextCtrl += Pr_Time(0,100000);
+time = VNextCtrl;
+pus_service129_init_flight_plan();
+DroneTimer.InformAt(time);
 [MaquinasSubEstados]
 0
 [FinMaquinasSubEstados]
