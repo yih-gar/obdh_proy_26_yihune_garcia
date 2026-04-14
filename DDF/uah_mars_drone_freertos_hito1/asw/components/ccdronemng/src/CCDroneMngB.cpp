@@ -11,14 +11,14 @@
 	// CONSTRUCTORS***********************************************
 
 CCDroneMng::EDROOM_CTX_Top_0::EDROOM_CTX_Top_0(CCDroneMng &act,
-	 Pr_Time & EDROOMpVarVNextCtrl ):
+	 Pr_Time & EDROOMpVarVNextCtrl; ):
 
 	EDROOMcomponent(act),
 	Msg(EDROOMcomponent.Msg),
 	MsgBack(EDROOMcomponent.MsgBack),
 	DroneMngCtrl(EDROOMcomponent.DroneMngCtrl),
 	DroneTimer(EDROOMcomponent.DroneTimer),
-	VNextCtrl(EDROOMpVarVNextCtrl)
+	VNextCtrl;(EDROOMpVarVNextCtrl;)
 {
 }
 
@@ -29,7 +29,7 @@ CCDroneMng::EDROOM_CTX_Top_0::EDROOM_CTX_Top_0(EDROOM_CTX_Top_0 &context):
 	MsgBack(context.MsgBack),
 	DroneMngCtrl(context.DroneMngCtrl),
 	DroneTimer(context.DroneTimer),
-	VNextCtrl(context.VNextCtrl)
+	VNextCtrl;(context.VNextCtrl;)
 {
 
 }
@@ -64,11 +64,8 @@ void	CCDroneMng::EDROOM_CTX_Top_0::FDroneSelfTest()
 
 {
 
-void FDroneSelfTest(){
- 
 pus_service129_drone_selftest();
- 
-}
+
 
 }
 
@@ -79,7 +76,6 @@ void	CCDroneMng::EDROOM_CTX_Top_0::FExecDroneTC()
 {
    //Handle Msg->data
   CDTCHandler & varSDroneTC = *(CDTCHandler *)Msg->data;
-	
 varSDroneTC.ExecDroneTC();
 
 }
@@ -96,27 +92,13 @@ pus_service129_flight_ctrl_algorithm();
 
 
 
-void	CCDroneMng::EDROOM_CTX_Top_0::FGetConfig()
-
-{
-   //Handle Msg->data
-  CDDroneConfig & varSDroneSetUp = *(CDDroneConfig *)Msg->data;
- 
- 
- 
-pus_service129_setup(varSDroneSetUp);
-
-}
-
-
-
 void	CCDroneMng::EDROOM_CTX_Top_0::FInitFlightPlan()
 
 {
 
 Pr_Time time;
 time.GetTime();
-time += Pr_time(0,100000);
+time += Pr_Time(0,100000);
 VNextCtrl=time;
 pus_service129_init_flight_plan();
 DroneTimer.InformAt(time);
@@ -130,8 +112,9 @@ void	CCDroneMng::EDROOM_CTX_Top_0::FProgNextCtrl()
 {
 
 Pr_Time time;
-VNextCtrl += Pr_time(0,100000);
-time=VNextCtrl;
+VNextCtrl += Pr_Time(0,100000);
+time = VNextCtrl;
+pus_service129_init_flight_plan();
 DroneTimer.InformAt(time);
 
 }
@@ -153,7 +136,7 @@ void	CCDroneMng::EDROOM_CTX_Top_0::FToReady()
 
 {
 
- pus_service129_drone_ready();
+pus_service129_drone_ready();
 
 }
 
@@ -195,7 +178,7 @@ return pus_service129_flight_plan_done();
 
 CCDroneMng::EDROOM_SUB_Top_0::EDROOM_SUB_Top_0 (CCDroneMng&act):
 		EDROOM_CTX_Top_0(act,
-			VNextCtrl)
+			VNextCtrl;)
 {
 
 }
@@ -224,10 +207,10 @@ void CCDroneMng::EDROOM_SUB_Top_0::EDROOMBehaviour()
 				//Next State is SelfTest
 				edroomNextState = SelfTest;
 				break;
-			//Next Transition is ToReady
-			case (ToReady):
+			//Next Transition is  
+			case ( ):
 				//Msg->Data Handling 
-				FGetConfig();
+				FExecDroneTC();
 				//Reply Synchronous Message 
 				FReplyDroneReady();
 				//Next State is Ready
@@ -398,8 +381,8 @@ TEDROOMTransId CCDroneMng::EDROOM_SUB_Top_0::EDROOMSelfTestArrival()
 				 if (*Msg->GetPInterface() == DroneMngCtrl)
 				{
 
-					//Next transition is  ToReady
-					edroomCurrentTrans.localId= ToReady;
+					//Next transition is   
+					edroomCurrentTrans.localId=  ;
 					edroomCurrentTrans.distanceToContext = 0;
 					edroomValidMsg=true;
 				 }
