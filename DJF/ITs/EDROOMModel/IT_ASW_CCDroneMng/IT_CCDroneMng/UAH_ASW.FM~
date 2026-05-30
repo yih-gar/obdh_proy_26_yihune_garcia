@@ -6,7 +6,7 @@
 [Nombre Modelo]
 UAH_ASW
 [Modificado]
-1
+0
 [Opciones Modelo]
 [Version Opciones Modelo]
 4
@@ -19,9 +19,9 @@ UAH_ASW
 [CurrentTarget]
 0
 [MESP Directory]
-C:\Users\ferna\Documents\GitHub\obdh_proy_26_fernando_giron\DJF\ITs\it_asw_ccdronemng_freertos_hito3\asw
+C:\Users\Semilla\Documents\GitHub\obdh_proy_26_yihune_garcia\DJF\ITs\it_asw_ccdronemng_freertos_hito3\asw
 [MESP main Directory]
-C:\Users\ferna\Documents\GitHub\obdh_proy_26_fernando_giron\DJF\ITs\it_asw_ccdronemng_freertos_hito3
+C:\Users\Semilla\Documents\GitHub\obdh_proy_26_yihune_garcia\DJF\ITs\it_asw_ccdronemng_freertos_hito3
 [MESP main prototype]
 int main (void)
 [MESP main return]
