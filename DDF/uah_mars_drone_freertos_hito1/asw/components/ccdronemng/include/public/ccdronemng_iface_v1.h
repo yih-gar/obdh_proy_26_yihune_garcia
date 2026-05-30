@@ -36,8 +36,8 @@ public:
 	 */
 	 enum TEDROOMCCDroneMngSignal { EDROOMSignalTimeout, 
 							EDROOMSignalDestroy, 
-							SDroneTC, 
 							SDroneSetUp, 
+							SDroneTC, 
 							SDroneReady };
 
 	/**
@@ -175,8 +175,8 @@ public:
 	 */
 	enum TEDROOMCCDroneMngSignal { EDROOMSignalTimeout,
 		EDROOMSignalDestroy,
-		SDroneTC,
 		SDroneSetUp,
+		SDroneTC,
 		SDroneReady };
 
 
@@ -204,10 +204,10 @@ public:
 
 		//!Transition Identifiers
 		enum TEDROOMTransitionID{Init,
-			 ,
+			ToReady,
 			ExecTC,
-			ExecTC_WaitFP,
 			ExecTC_InitFlightPlan,
+			ExecTC_WaitFP,
 			CtrlAlgorithm,
 			CtrlAlgorithm_PlanDone,
 			CtrlAlgorithm_ProgNextCtrl,
@@ -216,14 +216,14 @@ public:
 
 
 		//!Variables
-		Pr_Time &VNextCtrl;;
+		Pr_Time &VNextCtrl;
 
 
 
 
 		//!Constructor
 		EDROOM_CTX_Top_0 (CCDroneMng &act,
-				Pr_Time & EDROOMpVarVNextCtrl; );
+				Pr_Time & EDROOMpVarVNextCtrl );
 
 		//!Copy constructor
 		EDROOM_CTX_Top_0 (EDROOM_CTX_Top_0 &context);
@@ -267,6 +267,11 @@ public:
 		 * \brief  
 		 */
 		void	FFlightCtrlAlgorithm();
+
+		/**
+		 * \brief  
+		 */
+		void	FGetConfig();
 
 		/**
 		 * \brief  
@@ -321,7 +326,7 @@ public:
 		EDROOM_CTX_Top_0::TEDROOMStateID edroomNextState;
 
 		//!Variables
-		Pr_Time VNextCtrl;;
+		Pr_Time VNextCtrl;
 
 
 
