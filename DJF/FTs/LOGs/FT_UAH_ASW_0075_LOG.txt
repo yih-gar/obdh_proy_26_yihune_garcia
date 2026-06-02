@@ -1,0 +1,25 @@
+Current OBT is = 100047
+
+GSS Tx TC[20,3] FT_UAH_ASW_SetGetParam_0075 step 3, Update PID 15 to 99
+GSS Rx TM [1,1]
+GSS Rx TM [1,3]
+GSS Rx TM [1,7]
+
+Current OBT is = 100048
+
+Current OBT is = 100049
+
+GSS Tx TC[20,1] FT_UAH_ASW_SetGetParam_0075 step 4, Get PID 15
+GSS Rx TM [1,1]
+GSS Rx TM [1,3]
+GSS Rx TM [20,2] PID 15 value =99
+
+GSS Rx TM [1,7]
+
+Current OBT is = 100050
+
+Current OBT is = 100051
+
+Current OBT is = 100052
+
+Current OBT is = 100053

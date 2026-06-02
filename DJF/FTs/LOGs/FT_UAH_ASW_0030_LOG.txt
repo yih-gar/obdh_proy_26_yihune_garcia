@@ -1,0 +1,20 @@
+Current OBT is = 100012
+
+GSS Tx TC[17,3] FT_UAH_ASW_SERV_1_0030 step 0, Rejected TC
+GSS Rx TM [1,2]: SUBTYPE NOT VALID
+
+Current OBT is = 100013
+
+Current OBT is = 100014
+
+Current OBT is = 100015
+
+Current OBT is = 100016
+
+Current OBT is = 100017
+
+Current OBT is = 100018
+
+Current OBT is = 100019
+
+Current OBT is = 100020
